@@ -1,5 +1,6 @@
 " ┌───────────────────────────────────┐
-" │      VimFiles by Lucas Caton      │
+ map <S-Right> :tabn<CR>
+  map <S-Left>  :tabp<CR>" │      VimFiles by Lucas Caton      │
 " ├───────────────────────────────────┤
 " │ http://lucascaton.com.br/         │
 " │ http://blog.lucascaton.com.br/    │
@@ -112,8 +113,14 @@ set expandtab
 " Folding settings
 " set foldmethod=indent   " fold based on indent
 " set foldnestmax=10      " deepest fold is 3 levels
-set nofoldenable        " dont fold by default
+" set nofoldenable        " dont fold by default
 " set foldlevel=1
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 set wildmode=list:longest " make cmdline tab completion similar to bash
 set wildmenu " enable ctrl-n and ctrl-p to scroll thru matches
@@ -190,7 +197,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
 " set guifont=Monospace\ 10
 
 " Fonts for Mac
-set guifont=Monaco\ for\ Powerline:h15
+set guifont=Monaco\ for\ Powerline:h12
 " set guifont=Anonymous\ Pro:h17
 " set guifont=Inconsolata-dz:h17
 
@@ -215,8 +222,8 @@ if has("gui_running") || $TERM == "xterm-256color"
   set t_Co=256
   set background=dark " light
   let base16colorspace=256 " Access colors present in 256 colorspace
-  " colorscheme base16-default
-  colorscheme base16-ocean
+  colorscheme base16-default
+  " colorscheme base16-ocean
 else
   let g:CSApprox_loaded = 0
 endif
@@ -457,3 +464,10 @@ au BufNewFile,BufRead *.less       set filetype=css
 au BufNewFile,BufRead bash_profile set filetype=sh
 au BufNewFile,BufRead Capfile      set filetype=ruby
 au BufNewFile,BufRead *.hbs        set filetype=html
+
+
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+map <S-Right> :tabn<CR>
+map <S-Left>  :tabp<CR>
