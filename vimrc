@@ -7,7 +7,6 @@
 " │ http://www.twitter.com/lucascaton │
 " └───────────────────────────────────┘
 
-
 " ┌───────────────────────────────────┐
 " │              Vundle               │
 " └───────────────────────────────────┘
@@ -32,7 +31,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lilydjwg/colorizer'
 Plugin 'msanders/snipmate.vim'
-Plugin 'rking/ag.vim'
+"Plugin 'rking/ag.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -222,7 +221,7 @@ if has("gui_running") || $TERM == "xterm-256color"
   set t_Co=256
   set background=dark " light
   let base16colorspace=256 " Access colors present in 256 colorspace
-  colorscheme monokai " Monokai-Refined " base16-default " default
+  colorscheme monokai " base16-default " default
   " colorscheme base16-ocean
 else
   let g:CSApprox_loaded = 0
@@ -268,8 +267,8 @@ nnoremap <leader>h :call ConvertRubyHashSyntax()<cr>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Bind \ (backward slash) to Ag shortcut
-nnoremap \ :Ag -i<SPACE>
-nnoremap \i :Ag<SPACE>
+"nnoremap \ :Ag -i<SPACE>
+"nnoremap \i :Ag<SPACE>
 
 " Bind K to search for the word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -469,5 +468,4 @@ au BufNewFile,BufRead *.hbs        set filetype=html
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-map <S-Right> :tabn<CR>
-map <S-Left>  :tabp<CR>
+map <D-p> :CtrlP<CR>
