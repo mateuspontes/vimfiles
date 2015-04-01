@@ -26,12 +26,12 @@ Plugin 'danro/rename.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'gorkunov/smartpairs.vim'
 Plugin 'henrik/vim-ruby-runner'
-Plugin 'int3/vim-extradite'
+"Plugin 'int3/vim-extradite'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lilydjwg/colorizer'
 Plugin 'msanders/snipmate.vim'
-"Plugin 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -267,8 +267,8 @@ nnoremap <leader>h :call ConvertRubyHashSyntax()<cr>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Bind \ (backward slash) to Ag shortcut
-"nnoremap \ :Ag -i<SPACE>
-"nnoremap \i :Ag<SPACE>
+nnoremap \ :Ag -i<SPACE>
+nnoremap \i :Ag<SPACE>
 
 " Bind K to search for the word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
