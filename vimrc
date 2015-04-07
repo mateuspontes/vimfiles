@@ -42,6 +42,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'tpope/vim-surround'
 
 filetype plugin indent on
 
